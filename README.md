@@ -11,3 +11,34 @@ hatch new --cli poc_hatch
 mv poc-hatch/* .
 rmdir poc-hatch
 ```
+
+## パッケージのビルド
+
+```console
+hatch build
+```
+
+dist ディレクトリ配下に生成される
+
+テスト環境用意
+
+```console
+python3 -m venv test_venv
+source test_venv/bin/activate
+# あとで移す
+pip install click
+pip install --no-index --find-links=./dist/ poc_hatch
+```
+
+下記で実行確認できる
+
+```console
+poc-hatch
+```
+
+環境削除は以下を実施
+
+```console
+deactivate
+rm -rf test_venv/
+```
