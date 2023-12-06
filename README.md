@@ -25,9 +25,7 @@ dist ディレクトリ配下に生成される
 ```console
 python3 -m venv test_venv
 source test_venv/bin/activate
-# あとで移す
-pip install click
-pip install --no-index --find-links=./dist/ poc_hatch
+pip install --find-links=./dist/ poc_hatch
 ```
 
 下記で実行確認できる
